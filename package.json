@@ -1,6 +1,6 @@
 {
   "name": "universal-analytics-koa",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "A fork of Peaks & Pies universal-analytics with added support for koa framework middleware.",
   "author": "Oscar Armstrong <oscar@otothea.com> (https://github.com/otothea)",
   "homepage": "https://otothea.com",
