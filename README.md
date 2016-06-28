@@ -3,7 +3,6 @@ Universal Analytics Koa - NodeJS
 A fork of Peaks & Pies [universal-analytics](https://github.com/peaksandpies/universal-analytics) with added support for koa framework middleware.
 
 ## Usage
-
 ```javascript
 var ua  = require("universal-analytics");
 var koa = require("koa");

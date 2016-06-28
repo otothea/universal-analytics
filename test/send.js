@@ -38,7 +38,7 @@ describe("ua", function () {
 			fn.args[0].should.eql([null, 0], "no error, no requests");
 		});
 
-		it("should stringify and POST each params object in the queue in order", function (done) {
+		it("should include data in POST form", function (done) {
 			var paramSets = [
 				{first: Math.random()},
 				{second: Math.random()},
@@ -56,19 +56,19 @@ describe("ua", function () {
 					var params = paramSets[i];
 					var args = post.args[i];
 
-					var parsedUrl = url.parse(args[0])
+					var parsedUrl = url.parse(args[0]);
 
 					Math.random(); // I have absolutely no idea why it fails unless there was some processing to be done after url.parse…
 
 					(parsedUrl.protocol + "//" + parsedUrl.host).should.equal(config.hostname);
-					parsedUrl.query.should.equal(qs.stringify(params));
+					args[1].form.should.equal(params);
 				}
 
-				done()
+				done();
 			});
 
 			var visitor = ua();
-			visitor._queue.push.apply(visitor._queue, paramSets)
+			visitor._queue.push.apply(visitor._queue, paramSets);
 			visitor.send(fn);
 		});
 
@@ -84,7 +84,7 @@ describe("ua", function () {
 
 				(parsedUrl.protocol + "//" + parsedUrl.host).should.equal(config.hostname);
 
-				options.should.have.keys(["headers"]);
+				options.should.have.keys(["headers","form"]);
 				options.headers.should.have.key("User-Agent");
 				options.headers["User-Agent"].should.equal("Test User Agent");
 

@@ -1,9 +1,15 @@
 {
   "name": "universal-analytics-koa",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "A fork of Peaks & Pies universal-analytics with added support for koa framework middleware.",
-  "author": "Oscar Armstrong <oscar@otothea.com> (https://github.com/otothea)",
-  "homepage": "https://otothea.com",
+  "main": "index.js",
+  "scripts": {
+    "test": "make test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:otothea/universal-analytics-koa.git"
+  },
   "keywords": [
     "google",
     "analytics",
@@ -12,22 +18,17 @@
     "koa",
     "middleware"
   ],
-  "repository": {
-    "type": "git",
-    "url": "git@github.com:otothea/universal-analytics-koa.git"
-  },
-  "main": "./index.js",
   "dependencies": {
     "request": "2.x",
     "underscore": "1.x",
     "node-uuid": "1.x",
     "async": "0.2.x"
   },
-  "bugs": {
-    "url": "https://github.com/otothea/universal-analytics-koa/issues"
+  "devDependencies": {
+    "should": "*",
+    "sinon": "*",
+    "mocha": "*"
   },
-  "license": "MIT",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  }
+  "author": "Oscar Armstrong <oscar@otothea.com> (https://github.com/otothea)",
+  "license": "MIT"
 }
